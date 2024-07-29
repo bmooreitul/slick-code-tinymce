@@ -41,7 +41,7 @@ tinymce.PluginManager.add('slick_code', function(editor, url) {
         var elemBtn         = $(editor.editorContainer).find('button[data-mce-name="slick_code"]');
         var tinyContainer   = $(editor.editorContainer);
         var aceID           = 'ace-editor-'+editor.id;
-        var defaultLineHeightRatio = 0.8;
+        var defaultLineHeightRatio = 0.85;
         var defaultLineHeight = 16;
         
         //CHECK IF ACE IS NOT DEFINED
@@ -112,8 +112,8 @@ tinymce.PluginManager.add('slick_code', function(editor, url) {
 
                 //SET THE NEW LINE COUNT
                 aceEditor.setOptions({
-                    minLines            : Math.round((($(window).height() / lineHeight)) * scaleLineHeightOffsetRatio),
-                    maxLines            : Math.round((($(window).height() / lineHeight)) * scaleLineHeightOffsetRatio),
+                    minLines            : (Math.round((($(window).height() / lineHeight)) * scaleLineHeightOffsetRatio))+2,
+                    maxLines            : (Math.round((($(window).height() / lineHeight)) * scaleLineHeightOffsetRatio))+2,
                 });
 
                 //RESIZE THE EDITOR
@@ -141,8 +141,8 @@ tinymce.PluginManager.add('slick_code', function(editor, url) {
                 showPrintMargin     : false,
                 enableBasicAutocompletion: true,
                 enableLiveAutocompletion: true,
-                minLines            : Math.round((($(window).height() / lineHeight)) * scaleLineHeightOffsetRatio),
-                maxLines            : Math.round((($(window).height() / lineHeight)) * scaleLineHeightOffsetRatio),
+                minLines            : (Math.round((($(window).height() / lineHeight)) * scaleLineHeightOffsetRatio))+2,
+                maxLines            : (Math.round((($(window).height() / lineHeight)) * scaleLineHeightOffsetRatio))+2,
             });
 
             //BEAUTIFY THE CONTENT
